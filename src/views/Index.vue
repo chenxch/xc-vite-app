@@ -9,7 +9,7 @@
       <div class="main__menu">
         <div class="main__title">
           <img src="../assets/flower.png" class="main__icon"/>
-          <span class="ml10">Xc</span>
+          <span class="ml10">Xc Official</span>
         </div>
         <el-menu
           default-active="/about"
@@ -33,13 +33,13 @@
   </div>
 </template>
 <script>
-import {ref} from 'vue'
+import { ref, reactive } from 'vue'
   export default {
     setup(){
-      const menuObj = ref([]);
+      const menuObj = reactive([]);
       const active = ref('/about');
-      menuObj.value.push({ path: '/about', name: '首页'});
-      menuObj.value.push({ path: '/test', name: '测试'});
+      menuObj.push({ path: '/about', name: '关于我'});
+      menuObj.push({ path: '/test', name: '测试'});
       const handleSelect = (index) => {
         active.value = index;
       }
@@ -98,7 +98,7 @@ import {ref} from 'vue'
     display: flex;
   }
 }
-:deep .el-menu{
+:deep(.el-menu) {
   border-right: 0;
   background-color: transparent;
 }
